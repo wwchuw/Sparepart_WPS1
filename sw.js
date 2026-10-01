@@ -1,5 +1,5 @@
 // เปลี่ยน VERSION ทุกครั้งที่แก้ไฟล์ในแอป มือถือจะโหลดของใหม่
-const VERSION = "sp-v1";
+const VERSION = "sp-v2";
 const SHELL = ["./", "index.html", "style.css", "app.js", "config.js", "vendor/jsQR.js", "manifest.webmanifest", "icons/icon-192.png"];
 self.addEventListener("install", (e) => {
   e.waitUntil(caches.open(VERSION).then((c) => c.addAll(SHELL)).then(() => self.skipWaiting()));

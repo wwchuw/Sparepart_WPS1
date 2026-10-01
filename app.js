@@ -158,6 +158,7 @@
   function renderParts() {
     const f = state.partFilter;
     let list = D().parts.filter((p) => matchPart(p, state.q));
+    if (f === "instock") list = list.filter((p) => p.qty > 0);
     if (f === "out") list = list.filter((p) => p.qty <= 0);
     if (f === "unchecked") list = list.filter((p) => p.checkFY !== FY);
     if (state.loc != null) list = list.filter((p) => (p.loc || "") === state.loc);
